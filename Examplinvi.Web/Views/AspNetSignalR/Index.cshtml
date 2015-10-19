@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>ASP.NET SignalR</h2>
+
+<p class="well">
+    This page provides a demo of Tweetinvi with ASP.NET SignalR, a signalling / websockets library that provides an easy to use implementation of realtime functionality.
+</p>
+
+<ul class="nav nav-tabs">
+    <li role="presentation" class="@(ViewContext.RouteData.Values["Action"].ToString() == "Sample" ? "active" : "")">@Html.ActionLink("Sample Stream", "Sample", "AspNetSignalR")</li>
+    <li role="presentation" class="@(ViewContext.RouteData.Values["Action"].ToString() == "Filtered" ? "active" : "")">@Html.ActionLink("Filtered Stream", "Filtered", "AspNetSignalR")</li>
+    <li role="presentation" class="@(ViewContext.RouteData.Values["Action"].ToString() == "User" ? "active" : "")">@Html.ActionLink("User Stream", "User", "AspNetSignalR")</li>
+</ul>
+
+<hr/>
+
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" id="start" class="btn btn-success">Start Stream</button>
+    <button type="button" id="stop" class="btn btn-danger disabled">Stop Stream</button>
+</div>
+
+<hr/>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <ul class="list-group">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+    </div>
+</div>
