@@ -11,24 +11,24 @@ namespace Examplinvi.Web.Controllers
         // GET: AspNetSignalR
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("FilteredStream");
         }
 
-        public ActionResult Filtered()
+        public ActionResult FilteredStream()
         {
             ViewBag.type = "filtered";
 
             return View("Index");
         }
 
-        public ActionResult User()
+        public new ActionResult UserStream()
         {
             ViewBag.type = "user";
 
             return View("Index");
         }
 
-        public ActionResult Sample()
+        public ActionResult SampleStream()
         {
             ViewBag.type = "sample";
 

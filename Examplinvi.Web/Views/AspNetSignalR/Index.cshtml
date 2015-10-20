@@ -10,9 +10,9 @@
 </p>
 
 <ul class="nav nav-tabs">
-    <li role="presentation" class="@(ViewContext.RouteData.Values["Action"].ToString() == "Sample" ? "active" : "")">@Html.ActionLink("Sample Stream", "Sample", "AspNetSignalR")</li>
-    <li role="presentation" class="@(ViewContext.RouteData.Values["Action"].ToString() == "Filtered" ? "active" : "")">@Html.ActionLink("Filtered Stream", "Filtered", "AspNetSignalR")</li>
-    <li role="presentation" class="@(ViewContext.RouteData.Values["Action"].ToString() == "User" ? "active" : "")">@Html.ActionLink("User Stream", "User", "AspNetSignalR")</li>
+    <li role="presentation" class="@(ViewContext.RouteData.Values["Action"].ToString() == "SampleStream" ? "active" : "")">@Html.ActionLink("Sample Stream", "SampleStream", "AspNetSignalR")</li>
+    <li role="presentation" class="@(ViewContext.RouteData.Values["Action"].ToString() == "FilteredStream" ? "active" : "")">@Html.ActionLink("Filtered Stream", "FilteredStream", "AspNetSignalR")</li>
+    <li role="presentation" class="@(ViewContext.RouteData.Values["Action"].ToString() == "UserStream" ? "active" : "")">@Html.ActionLink("User Stream", "UserStream", "AspNetSignalR")</li>
 </ul>
 
 <hr/>
@@ -23,6 +23,8 @@
 </div>
 
 <hr/>
+
+<input type="hidden" name="stream-type" value="@ViewBag.type" />
 
 <div class="panel panel-default">
     <div class="panel-body">

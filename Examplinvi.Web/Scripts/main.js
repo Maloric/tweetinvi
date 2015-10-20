@@ -27,10 +27,14 @@
     };
 
     $('#start').click(function () {
-        console.log('Message from Client: Starting stream');
+        
         $(this).prop('disabled', true).addClass('disabled');
         $('#stop').prop('disabled', false).removeClass('disabled');
-        tweetHub.server.startStream('filtered');
+
+        var streamType = $('input[name="stream-type"]').val();
+        tweetHub.server.startStream(streamType);
+
+        console.log('Message from Client: Starting stream (Stream type: ' + streamType + ')');
     });
 
     $('#stop').click(function () {
