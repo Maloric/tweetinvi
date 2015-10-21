@@ -13,44 +13,26 @@ namespace Examplinvi.Web.StreamManagers
         private ISampleStream _stream;
 
         public void Start()
-        {
-            
+        {            
             _stream = Stream.CreateSampleStream();
 
             _stream.Credentials = _credentials;
 
             _hubContext.Clients.All.log("Message from Server: Sample stream created");
 
-            //ExceptionHandler.SwallowWebExceptions = false;
-
             //_stream.JsonObjectReceived += (sender, args) =>
             //{
             //    _hubContext.Clients.All.log(args.Json);
             //};
 
-            //_stream.StreamStopped += (sender, args) =>
-            //{
-            //    var exceptionThatCausedTheStreamToStop = args.Exception;
-
-            //    _hubContext.Clients.All.log(exceptionThatCausedTheStreamToStop.Message);
-            //    //var twitterDisconnectMessage = args.DisconnectMessage;
-            //    //_hubContext.Clients.All.log(twitterDisconnectMessage.Reason);
-            //};
-
-            _stream.TweetReceived += (sender, args) =>
-            {
-                _hubContext.Clients.All.broadcastTweet(args.Tweet);
-            };
-
-
+            _stream.TweetReceived += (sender, args) => _hubContext.Clients.All.broadcastTweet(args.Tweet);
 
             _stream.StartStream();
-           // _backgroundThread = new Thread(_stream.StartStream);
         }
 
         public void Stop()
         {
-            throw new NotImplementedException();
+            _stream.StopStream();
         }   
     }
 }

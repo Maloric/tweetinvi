@@ -19,7 +19,8 @@
     var tweetHub = $.connection.tweetHub;
 
     tweetHub.client.broadcastTweet = function(tweet) {
-        console.log(tweet);
+        var listItem = '<li class="list-group-item"><span class="handle">@' + tweet.CreatedBy.ScreenName + '</span> ' + tweet.Text + '</li>';
+        $('#tweets').prepend(listItem);
     };
 
     tweetHub.client.log = function(log) {
@@ -41,7 +42,8 @@
         console.log('Message from Client: Stopping stream');
         $(this).prop('disabled', true).addClass('disabled');
         $('#start').prop('disabled', false).removeClass('disabled');
-        tweetHub.server.stopStream('filtered');
+        var streamType = $('input[name="stream-type"]').val();
+        tweetHub.server.stopStream(streamType);
     });
 
     $.connection.hub.start().done(function() {

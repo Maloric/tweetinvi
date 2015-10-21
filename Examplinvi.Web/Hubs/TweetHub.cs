@@ -38,7 +38,7 @@ namespace Examplinvi.Web.Hubs
             Clients.All.log("Message from Server: Stream started");
         }
 
-        public void StopStream()
+        public void StopStream(string streamType)
         {
             _streamManager.Stop();
 
