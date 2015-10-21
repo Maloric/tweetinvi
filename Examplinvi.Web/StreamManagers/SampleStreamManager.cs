@@ -32,7 +32,8 @@ namespace Examplinvi.Web.StreamManagers
 
         public void Stop()
         {
-            _stream.StopStream();
+            _stream.StreamStopped += (sender, args) => _hubContext.Clients.All.log("Server says: stream successfully stopped");
+            _stream.StopStream();            
         }   
     }
 }
