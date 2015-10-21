@@ -16,7 +16,12 @@ namespace Examplinvi.Web.StreamManagers
 
         public void Start()
         {
+            
             _stream = Stream.CreateFilteredStream();
+
+            _stream.AddTrack("tweetinvi");
+
+            _stream.Credentials = _credentials;
 
             _stream.MatchingTweetReceived += (sender, args) =>
             {

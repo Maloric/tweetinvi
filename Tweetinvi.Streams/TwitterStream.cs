@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using Newtonsoft.Json.Linq;
@@ -217,6 +218,7 @@ namespace Tweetinvi.Streams
             }
 
             var jsonObject = _jObjectWrapper.GetJobjectFromJson(json);
+
             var jsonRootToken = jsonObject.Children().First();
             var messageType = _jObjectWrapper.GetNodeRootName(jsonRootToken);
 

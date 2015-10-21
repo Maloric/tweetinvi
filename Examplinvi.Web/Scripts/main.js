@@ -39,6 +39,8 @@
 
     $('#stop').click(function () {
         console.log('Message from Client: Stopping stream');
+        $(this).prop('disabled', true).addClass('disabled');
+        $('#start').prop('disabled', false).removeClass('disabled');
         tweetHub.server.stopStream('filtered');
     });
 
