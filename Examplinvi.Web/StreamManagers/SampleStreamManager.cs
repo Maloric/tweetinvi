@@ -21,16 +21,21 @@ namespace Examplinvi.Web.StreamManagers
 
             _hubContext.Clients.All.log("Message from Server: Sample stream created");
 
-            ExceptionHandler.SwallowWebExceptions = false;
+            //ExceptionHandler.SwallowWebExceptions = false;
 
-            _stream.StreamStopped += (sender, args) =>
-            {
-                var exceptionThatCausedTheStreamToStop = args.Exception;
+            //_stream.JsonObjectReceived += (sender, args) =>
+            //{
+            //    _hubContext.Clients.All.log(args.Json);
+            //};
 
-                _hubContext.Clients.All.log(exceptionThatCausedTheStreamToStop.Message);
-                //var twitterDisconnectMessage = args.DisconnectMessage;
-                //_hubContext.Clients.All.log(twitterDisconnectMessage.Reason);
-            };
+            //_stream.StreamStopped += (sender, args) =>
+            //{
+            //    var exceptionThatCausedTheStreamToStop = args.Exception;
+
+            //    _hubContext.Clients.All.log(exceptionThatCausedTheStreamToStop.Message);
+            //    //var twitterDisconnectMessage = args.DisconnectMessage;
+            //    //_hubContext.Clients.All.log(twitterDisconnectMessage.Reason);
+            //};
 
             _stream.TweetReceived += (sender, args) =>
             {

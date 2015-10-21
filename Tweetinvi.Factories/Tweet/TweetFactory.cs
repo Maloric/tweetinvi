@@ -61,7 +61,7 @@ namespace Tweetinvi.Factories.Tweet
             var tweetDTO = _jsonObjectConverter.DeserializeObject<ITweetDTO>(jsonTweet);
 
 
-            if (tweetDTO == null || tweetDTO.Id == default(int) || tweetDTO.Id == TweetinviSettings.DEFAULT_ID)
+            if (tweetDTO.Id == TweetinviSettings.DEFAULT_ID)
             {
                 return null;
             }
