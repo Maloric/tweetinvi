@@ -19,7 +19,7 @@
     var tweetHub = $.connection.tweetHub;
 
     tweetHub.client.broadcastTweet = function(tweet) {
-        var listItem = '<li class="list-group-item"><span class="handle">@' + tweet.CreatedBy.ScreenName + '</span> ' + tweet.Text + '</li>';
+        var listItem = '<li class="list-group-item"><span class="handle">' + tweet.UserHandle + '</span> ' + tweet.Text + '</li>';
         $('#tweets').prepend(listItem);
     };
 
@@ -48,6 +48,10 @@
 
     $.connection.hub.start().done(function() {
         console.log('Message from Client: Connected to hub with client id: ' + $.connection.hub.id);
+    });
+
+    $.connection.hub.error(function (error) {
+        console.log('SignalR error: ' + error)
     });
     // End SignalR stuff
 });

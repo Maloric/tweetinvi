@@ -13,8 +13,8 @@ namespace Examplinvi.Web.Hubs
    
     public class TweetHub : Hub
     {
-
-        private IStreamManager _streamManager;
+        
+        private static IStreamManager _streamManager;
 
         public void StartStream(string streamType)
         {
@@ -43,6 +43,7 @@ namespace Examplinvi.Web.Hubs
             _streamManager.Stop();
 
             Clients.All.log("Message from Server: Stream stopped");
+            
         }
     }
 }

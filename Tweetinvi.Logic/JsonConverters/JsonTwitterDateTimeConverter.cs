@@ -9,8 +9,7 @@ namespace Tweetinvi.Logic.JsonConverters
     {
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            // Adam changed
-            serializer.Serialize(writer, value);
+            throw new NotImplementedException();
         }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
