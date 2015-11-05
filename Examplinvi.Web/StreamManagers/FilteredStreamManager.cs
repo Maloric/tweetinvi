@@ -16,7 +16,7 @@ namespace Examplinvi.Web.StreamManagers
 
         public void Start()
         {
-            
+
             _stream = Stream.CreateFilteredStream();
 
             _stream.AddTrack("tweetinvi");
@@ -30,7 +30,7 @@ namespace Examplinvi.Web.StreamManagers
                 _hubContext.Clients.All.broadcastTweet(tweet);
             };
 
-            _backgroundThread = new Thread(_stream.StartStreamMatchingAllConditions);
+            _stream.StartStreamMatchingAllConditionsAsync();
         }
 
         public void Stop()

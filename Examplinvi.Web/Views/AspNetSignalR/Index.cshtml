@@ -24,7 +24,14 @@
 
 <hr/>
 
+
+
 <input type="hidden" name="stream-type" value="@ViewBag.type" />
+
+@if (ViewBag.type == "user")
+{
+    @Html.Partial("_UserStream")
+}
 
 <div class="panel panel-default">
     <div class="panel-body">

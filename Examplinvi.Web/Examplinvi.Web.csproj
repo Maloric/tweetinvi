@@ -196,6 +196,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\AspNetSignalR\Index.cshtml" />
+    <Content Include="Views\AspNetSignalR\_UserStream.cshtml" />
     <None Include="Views\Tweet\Index.cshtml" />
     <None Include="Views\Tweet\TweetPublished.cshtml" />
     <Content Include="Web.config" />

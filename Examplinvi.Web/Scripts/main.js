@@ -35,6 +35,25 @@
         var streamType = $('input[name="stream-type"]').val();
         tweetHub.server.startStream(streamType);
 
+        var isValid = false;
+
+        if (streamType === 'user')
+        {
+            var userNameInput = $('#user-name');
+
+            if (userNameInput.val().length > 0)
+            {
+                isValid = true;
+            }
+        }
+        else if (streamType === 'filtered')
+        {
+
+        }
+        else if (streamType === 'sample')
+        {
+
+        }
         console.log('Message from Client: Starting stream (Stream type: ' + streamType + ')');
     });
 

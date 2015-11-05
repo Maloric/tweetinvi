@@ -45,5 +45,7 @@ namespace Examplinvi.Web.Hubs
             Clients.All.log("Message from Server: Stream stopped");
             
         }
+
+
     }
 }

@@ -13,7 +13,6 @@ namespace Examplinvi.Web.StreamManagers
 {
     public class StreamManagerBase
     {
-        protected Thread _backgroundThread;
         protected IHubContext _hubContext;
         protected ITwitterCredentials _credentials = MyCredentials.GenerateCredentials();
 

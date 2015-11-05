@@ -16,12 +16,22 @@ namespace Examplinvi.Web.StreamManagers
         {
             _stream = Stream.CreateUserStream();
 
-            _stream.TweetCreatedByMe += (sender, args) =>
+            _stream.StreamIsReady += (sender, args) =>
             {
 
             };
 
-            _backgroundThread = new Thread(_stream.StartStream);
+            _stream.FollowedByUser += (sender, args) =>
+            {
+
+            };
+
+            _stream.FollowedUser += (sender, args) =>
+            {
+
+            };
+
+            _stream.StartStreamAsync();
         }
 
         public void Stop()
